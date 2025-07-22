@@ -1,20 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Minus, Plus, Trash2, ShoppingBag, Sparkles, CreditCard } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import React from "react";
+import emptyAnimation from "../assets/empty-cart.json";
+
+import Lottie from "lottie-react";
+
+import { Link } from "react-router-dom";
+import {
+  Minus,
+  Plus,
+  Trash2,
+  ShoppingBag,
+  Sparkles,
+  CreditCard,
+} from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 const Cart: React.FC = () => {
-  const { cartItems, updateQuantity, removeFromCart, clearCart, getCartTotal } = useCart();
+  const { cartItems, updateQuantity, removeFromCart, clearCart, getCartTotal } =
+    useCart();
 
   if (cartItems.length === 0) {
     return (
       <div className="min-h-screen pt-16 flex items-center justify-center">
         <div className="text-center max-w-md mx-auto px-4">
-          <div className="text-8xl mb-6">📜</div>
-          <h1 className="text-3xl font-bold text-white mb-4">Your Spellbook is Empty</h1>
+          <Lottie
+            animationData={emptyAnimation}
+            loop
+            className="w-64 h-64 mx-auto mb-6"
+          />
+          ;{/* <div className="text-8xl mb-6">📜</div> */}
+          <h1 className="text-3xl font-bold text-white mb-4">
+            Your Spellbook is Empty
+          </h1>
           <p className="text-gray-300 mb-8">
-            No magical items have been added to your enchanted cart yet. 
-            Start your quest and discover amazing artifacts!
+            No magical items have been added to your enchanted cart yet. Start
+            your quest and discover amazing artifacts!
           </p>
           <Link
             to="/shop"
@@ -53,7 +72,9 @@ const Cart: React.FC = () => {
           <div className="lg:col-span-2 space-y-4">
             <div className="bg-black/60 backdrop-blur-sm rounded-xl border border-yellow-500/30 p-6">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold text-white">Cart Items ({cartItems.length})</h2>
+                <h2 className="text-2xl font-bold text-white">
+                  Cart Items ({cartItems.length})
+                </h2>
                 <button
                   onClick={clearCart}
                   className="flex items-center space-x-2 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200"
@@ -95,7 +116,8 @@ const Cart: React.FC = () => {
                         </span>
                         {item.house && (
                           <span className="px-2 py-1 bg-yellow-600/50 text-yellow-200 rounded">
-                            {item.house.charAt(0) + item.house.slice(1).toLowerCase()}
+                            {item.house.charAt(0) +
+                              item.house.slice(1).toLowerCase()}
                           </span>
                         )}
                       </div>
@@ -104,7 +126,9 @@ const Cart: React.FC = () => {
                     {/* Quantity Controls */}
                     <div className="flex items-center space-x-3">
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity - 1)
+                        }
                         className="w-8 h-8 bg-gray-700 hover:bg-gray-600 text-white rounded-lg flex items-center justify-center transition-colors duration-200"
                       >
                         <Minus className="h-4 w-4" />
@@ -113,7 +137,9 @@ const Cart: React.FC = () => {
                         {item.quantity}
                       </span>
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        onClick={() =>
+                          updateQuantity(item.id, item.quantity + 1)
+                        }
                         className="w-8 h-8 bg-gray-700 hover:bg-gray-600 text-white rounded-lg flex items-center justify-center transition-colors duration-200"
                       >
                         <Plus className="h-4 w-4" />
@@ -196,7 +222,9 @@ const Cart: React.FC = () => {
 
               {/* Magical Guarantee */}
               <div className="mt-6 p-4 bg-gradient-to-r from-purple-900/40 to-blue-900/40 rounded-lg border border-purple-500/30">
-                <h3 className="text-sm font-bold text-purple-300 mb-2">🛡️ Magical Guarantee</h3>
+                <h3 className="text-sm font-bold text-purple-300 mb-2">
+                  🛡️ Magical Guarantee
+                </h3>
                 <ul className="text-xs text-gray-300 space-y-1">
                   <li>• 30-day enchantment warranty</li>
                   <li>• Free owl delivery & returns</li>
