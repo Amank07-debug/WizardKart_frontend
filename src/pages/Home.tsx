@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Sparkles, Wand2, BookOpen, Crown, Shield } from 'lucide-react';
-import { products } from '../data/products';
-import ProductCard from '../components/ProductCard';
-import { HOUSES } from '../utils/constants';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Sparkles, Wand2, BookOpen, Crown, Shield } from "lucide-react";
+import { products } from "../data/products";
+import ProductCard from "../components/ProductCard";
+import { HOUSES } from "../utils/constants";
 
 const Home: React.FC = () => {
   const featuredProducts = products.slice(0, 4);
@@ -13,7 +13,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/50 via-black/30 to-blue-900/50"></div>
-        
+
         {/* Animated magical elements */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-yellow-400 rounded-full animate-pulse opacity-60"></div>
@@ -28,8 +28,9 @@ const Home: React.FC = () => {
               WizardKart
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              Welcome to the most enchanted marketplace in the wizarding world. 
-              Discover magical artifacts, potions, and treasures beyond your wildest dreams.
+              Welcome to the most enchanted marketplace in the wizarding world.
+              Discover magical artifacts, potions, and treasures beyond your
+              wildest dreams.
             </p>
           </div>
 
@@ -44,7 +45,7 @@ const Home: React.FC = () => {
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
             </Link>
-            
+
             <Link
               to="/profile"
               className="px-8 py-4 border-2 border-yellow-500 text-yellow-400 font-bold rounded-full hover:bg-yellow-500 hover:text-black transition-all duration-300 transform hover:scale-105"
@@ -63,8 +64,9 @@ const Home: React.FC = () => {
               Choose Your <span className="text-yellow-400">House</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Each Hogwarts house offers unique magical items tailored to their values and traditions. 
-              Discover items that resonate with your inner wizard.
+              Each Hogwarts house offers unique magical items tailored to their
+              values and traditions. Discover items that resonate with your
+              inner wizard.
             </p>
           </div>
 
@@ -75,25 +77,38 @@ const Home: React.FC = () => {
                 to={`/shop?house=${key}`}
                 className="group relative p-6 bg-gradient-to-br from-black/60 to-gray-900/60 backdrop-blur-sm rounded-xl border border-yellow-500/30 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${house.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-300 rounded-xl`}></div>
-                
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${house.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-300 rounded-xl`}
+                ></div>
+
                 <div className="relative z-10 text-center">
                   <div className="mb-4">
-                    {key === 'GRYFFINDOR' && <Crown className="h-12 w-12 text-red-500 mx-auto" />}
-                    {key === 'SLYTHERIN' && <Shield className="h-12 w-12 text-green-500 mx-auto" />}
-                    {key === 'RAVENCLAW' && <BookOpen className="h-12 w-12 text-blue-500 mx-auto" />}
-                    {key === 'HUFFLEPUFF' && <Sparkles className="h-12 w-12 text-yellow-500 mx-auto" />}
+                    {key === "GRYFFINDOR" && (
+                      <Crown className="h-12 w-12 text-red-500 mx-auto" />
+                    )}
+                    {key === "SLYTHERIN" && (
+                      <Shield className="h-12 w-12 text-green-500 mx-auto" />
+                    )}
+                    {key === "RAVENCLAW" && (
+                      <BookOpen className="h-12 w-12 text-blue-500 mx-auto" />
+                    )}
+                    {key === "HUFFLEPUFF" && (
+                      <Sparkles className="h-12 w-12 text-yellow-500 mx-auto" />
+                    )}
                   </div>
-                  
+
                   <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-200">
                     {house.name}
                   </h3>
-                  
+
                   <p className="text-gray-300 text-sm">
-                    {key === 'GRYFFINDOR' && 'Courage, bravery, and determination'}
-                    {key === 'SLYTHERIN' && 'Ambition, cunning, and resourcefulness'}
-                    {key === 'RAVENCLAW' && 'Intelligence, wisdom, and creativity'}
-                    {key === 'HUFFLEPUFF' && 'Loyalty, patience, and kindness'}
+                    {key === "GRYFFINDOR" &&
+                      "Courage, bravery, and determination"}
+                    {key === "SLYTHERIN" &&
+                      "Ambition, cunning, and resourcefulness"}
+                    {key === "RAVENCLAW" &&
+                      "Intelligence, wisdom, and creativity"}
+                    {key === "HUFFLEPUFF" && "Loyalty, patience, and kindness"}
                   </p>
                 </div>
               </Link>
@@ -110,8 +125,9 @@ const Home: React.FC = () => {
               Featured <span className="text-yellow-400">Magical Items</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Handpicked artifacts from the finest magical craftsmen. Each item is enchanted with 
-              powerful spells and guaranteed to enhance your magical abilities.
+              Handpicked artifacts from the finest magical craftsmen. Each item
+              is enchanted with powerful spells and guaranteed to enhance your
+              magical abilities.
             </p>
           </div>
 
@@ -137,19 +153,27 @@ const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-yellow-400 mb-2">1000+</div>
+              <div className="text-4xl md:text-5xl font-bold text-yellow-400 mb-2">
+                1000+
+              </div>
               <div className="text-gray-300">Magical Items</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-purple-400 mb-2">50K+</div>
+              <div className="text-4xl md:text-5xl font-bold text-purple-400 mb-2">
+                50K+
+              </div>
               <div className="text-gray-300">Happy Wizards</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">4</div>
+              <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">
+                4
+              </div>
               <div className="text-gray-300">Hogwarts Houses</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-green-400 mb-2">24/7</div>
+              <div className="text-4xl md:text-5xl font-bold text-green-400 mb-2">
+                24/7
+              </div>
               <div className="text-gray-300">Owl Delivery</div>
             </div>
           </div>
