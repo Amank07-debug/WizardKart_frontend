@@ -190,7 +190,7 @@
 // export default StarField;
 
 import React, { useEffect, useRef } from "react";
-import harryBg from "../public/harry-potter-bg.jpg"; // Make sure this image exists in /assets
+// import harryBg from "../public/harry-bg.jpg"; // Make sure this image exists in /assets
 
 interface Star {
   x: number;
@@ -251,12 +251,12 @@ const StarField: React.FC = () => {
     };
 
     // Load background image
-    const bgImg = new Image();
-    bgImg.src = harryBg;
-    bgImg.onload = () => {
-      imageRef.current = bgImg;
-      animate();
-    };
+    // const bgImg = new Image();
+    // bgImg.src = harryBg;
+    // bgImg.onload = () => {
+    //   imageRef.current = bgImg;
+    //   animate();
+    // };
 
     // Handle window resize
     const handleResize = () => {
